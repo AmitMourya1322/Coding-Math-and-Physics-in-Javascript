@@ -1,0 +1,34 @@
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d')
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let x = canvas.width/2
+let y = canvas.height/2
+let dx = 2;
+let dy = -2;
+let radius = 30;
+
+function drawBall(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.beginPath();
+    ctx.arc(x,y,radius,0,Math.PI*2);
+    ctx.fillStyle="#0095DD"
+    ctx.fill();
+    ctx.closePath();
+}
+
+function update(){
+    drawBall();
+    if(x+dx >canvas.width-radius || x+dx<radius){
+        dx = -dx
+    }
+    if(y+dy>canvas.height-radius || y+dy<radius){
+        dy= -dy
+    }
+    x+=dx;
+    y+=dy;
+
+}
+setInterval(update,10);
