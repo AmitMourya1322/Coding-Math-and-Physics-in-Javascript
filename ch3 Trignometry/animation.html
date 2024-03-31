@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animated Sine Wave</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <button id="toggleGridBtn">Toggle Grid Numbers</button>
+    <label for="speedSlider">Speed:</label>
+    <input type="range" id="speedSlider" min="1" max="20" value="10">
+    <script src="anime.js"></script>
+</body>
+</html>
